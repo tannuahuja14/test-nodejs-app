@@ -24,5 +24,9 @@ pipeline {
      }
   
    	}
+    post {
+           failure {
+               emailext attachLog:true, body: 'Pipeline is failed!', subject: 'Post Build Action Email', to: 'tannu.ahuja@knoldus.com'
+        }
 
    }
